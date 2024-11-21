@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>$HYPEGUY ON SUI</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        @keyframes rotate {
+            0% {
+                transform: translate(0, 47.5%) rotate(0);
+            }
+
+            100% {
+                transform: translate(0, 47.5%) rotate(360deg);
+            }
+        }
+
+        @keyframes rotate-2 {
+            0% {
+                transform: translate(0, 47.5%) rotate(-10deg);
+            }
+
+            100% {
+                transform: translate(0, 47.5%) rotate(10deg);
+            }
+        }
+
+        @keyframes scale {
+            0% {
+                transform: translate(0, 47.5%) rotate(0) scaleY(1);
+            }
+
+            30% {
+                transform: translate(0, 47.5%) rotate(0) scaleY(3);
+            }
+
+            100% {
+                transform: translate(0, 47.5%) rotate(0) scaleY(0.5);
+            }
+        }
+
+        @keyframes scale-2 {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            75% {
+                transform: translate(-50%, -50%) scale(2);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        @keyframes down {
+            0% {
+                top: 0;
+            }
+
+            99% {
+                top: 100%;
+            }
+
+            100% {
+                top: 100%;
+                display: none;
+            }
+        }
+
+        .loader-box {
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(36, 222, 245);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-box::before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border-radius: 50%;
+            transform-origin: center;
+            animation: scale-2 1s ease infinite;
+        }
+
+        .loaded .loader-box::before {
+            animation: none;
+        }
+
+        .loader {
+            position: relative;
+            z-index: 2;
+            transform: translate(0, 47.5%) rotate(0);
+            transform-origin: center 6px;
+        }
+
+        .loader img {
+            width: 200px;
+        }
+
+        .loaded .loader {
+            animation: rotate 1s ease-in 0.3s, scale 1s ease 1.3s forwards;
+        }
+
+        .loaded .loader-box {
+            animation: down 0.6s ease 1.6s forwards;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content=" ">
+    <meta name="twitter:title" content=" ">
+    <meta name="twitter:description" content="$HYPEGUY ">
+    <meta name="twitter:image" content="logoback.png">
+
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="images/logoback.png">
+    <meta property="og:type" content="site">
+    <meta property="og:site_name" content="$HYPEGUY">
+    <meta property="og:url" content="logoback.png">
+    <meta property="og:title" content="$HYPEGUY ">
+    <meta name="description" content="$HYPEGUY">
+</head>
+
+<body>
+    <div class="loader-box">
+        <span class="loader"><img src="images/loader.png" alt="Image"></span>
+    </div>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container">
+                <a href="index.html" class="header__logo"><img src="images/logo.png" alt="Logo Image"></a>
+                <div class="header__menu menu">
+                    <nav class="menu__body">
+                        <ul class="menu__list">
+                            <li class="menu__item">
+                                <a href="#" data-goto-header data-goto=".hero" class="menu__link">Home</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" data-goto-header data-goto=".about" class="menu__link">About</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" data-goto-header data-goto=".tokenomics" class="menu__link">Tokenomics</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" data-goto-header data-goto=".follow" class="menu__link">Socials</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="./meme/" class="menu__link">meme generator</a>
+                            </li>
+                            <li class="menu__item">
+                                <a target="_blank"
+                                    href="https://www.dextools.io/app/en/solana/pair-explorer/3LGJAJ9PqWrZQ7hSmPemJTyMDQBPRBUpE51FRP3kmsK6?t=1732155475865"
+                                    class="menu__link">dextools</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <button type="button" class="menu__icon icon-menu"><span></span></button>
+                </div>
+                <div data-da=".menu__body, 991.98" class="header__actions">
+                    <a target="_blank" href="https://t.me/hypeguyportal" class="header__action button"><img
+                            src="fonts/telegram.svg" alt="Telegram Icon"><span>Join Telegram</span></a>
+                </div>
+            </div>
+        </header>
+
+        <main class="page">
+            <section data-watch="navigator" data-watch-threshold="0.51" class="page__hero hero">
+                <div class="hero__background">
+                    <span></span><span></span>
+                    <img src="images/bg2.png" alt="Background Image">
+                </div>
+                <div class="hero__container">
+                    <div class="hero__content">
+                        <h1 class="hero__title">
+                            <img src="images/title.png" alt="img">
+                            <span>Solana BOY</span>
+                        </h1>
+                        <div class="hero__actions">
+                            <a target="_blank"
+                                href="https://www.dextools.io/app/en/solana/pair-explorer/3LGJAJ9PqWrZQ7hSmPemJTyMDQBPRBUpE51FRP3kmsK6?t=1732155475865"
+                                class="hero__button hero__button--white"><img src="images/dext.webp" alt="logo"></a>
+                            <a target="_blank"
+                                href="https://dexscreener.com/solana/3lgjaj9pqwrzq7hsmpemjtymdqbprbupe51frp3kmsk6"
+                                class="hero__button hero__button--white">
+                                <img src="images/dex.png" alt="logo">
+                            </a>
+                            <a target="_blank" href="#" class="hero__button hero__button--white">
+                                <img src="images/okx.png" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero__image">
+                        <img src="images/01_2.png" alt="Image">
+                    </div>
+                </div>
+            </section>
+            <section data-watch="navigator" data-watch-threshold="0.51" class="page__about about">
+                <div class="about__container">
+                    <div class="about__body">
+                        <div data-watch-threshold="0.6" data-watch-once data-watch class="about__content">
+                            <h2 class="about__title">About</h2>
+                            <div class="about__text">
+                                HypeGuy is an innovative meme project inspired by the laid-back essence of the "Chill
+                                Guy" meme. It captures the excitement and contagious energy of the internet’s most viral
+                                trends, offering a vibrant and charismatic reinterpretation. Celebrating iconic moments
+                                with creativity and humor, HypeGuy aims to bring global communities together, standing
+                                out as a symbol of positivity and fun in the digital world. It’s more than a meme—it’s a
+                                movement.
+                            </div>
+                            <a target="_blank" href="https://knowyourmeme.com/memes/just-a-chill-guy-my-new-character"
+                                class="about__button button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M12 3C14.314 3 16.456 3.408 18.058 4.109C18.857 4.459 19.567 4.901 20.09 5.443C20.575 5.943 20.935 6.571 20.992 7.299L21 7.5V17.5C21 18.314 20.619 19.01 20.09 19.557C19.567 20.099 18.857 20.541 18.058 20.891C16.456 21.591 14.314 22 12 22C9.686 22 7.544 21.592 5.942 20.891C5.143 20.541 4.433 20.099 3.91 19.557C3.425 19.057 3.065 18.429 3.008 17.701L3 17.5V7.5C3 6.686 3.381 5.99 3.91 5.443C4.433 4.901 5.143 4.459 5.942 4.109C7.544 3.409 9.686 3 12 3ZM19 15.407C18.697 15.589 18.3823 15.7507 18.058 15.891C16.456 16.591 14.314 17 12 17C9.686 17 7.544 16.592 5.942 15.891C5.61765 15.7507 5.30296 15.589 5 15.407V17.5C5 17.652 5.066 17.876 5.348 18.167C5.634 18.463 6.096 18.775 6.744 19.059C8.038 19.625 9.895 20 12 20C14.105 20 15.962 19.625 17.256 19.059C17.904 18.775 18.366 18.463 18.652 18.167C18.934 17.877 19 17.652 19 17.5V15.407ZM19 10.407C18.697 10.589 18.3823 10.7507 18.058 10.891C16.456 11.591 14.314 12 12 12C9.686 12 7.544 11.592 5.942 10.891C5.61765 10.7507 5.30296 10.589 5 10.407V12.5C5 12.652 5.066 12.876 5.348 13.167C5.634 13.463 6.096 13.775 6.744 14.059C8.038 14.625 9.895 15 12 15C14.105 15 15.962 14.625 17.256 14.059C17.904 13.775 18.366 13.463 18.652 13.167C18.934 12.877 19 12.652 19 12.5V10.407ZM12 5C9.895 5 8.038 5.375 6.744 5.941C6.096 6.225 5.634 6.537 5.348 6.833C5.066 7.123 5 7.348 5 7.5C5 7.652 5.066 7.876 5.348 8.167C5.634 8.463 6.096 8.775 6.744 9.059C8.038 9.625 9.895 10 12 10C14.105 10 15.962 9.625 17.256 9.059C17.904 8.775 18.366 8.463 18.652 8.167C18.934 7.877 19 7.652 19 7.5C19 7.348 18.934 7.124 18.652 6.833C18.366 6.537 17.904 6.225 17.256 5.941C15.962 5.375 14.105 5 12 5Z"
+                                        fill="black" />
+                                </svg>
+                                <span>ref HypeGuy</span>
+                            </a>
+                        </div>
+                        <div class="about__image">
+                            <img src="images/01.png" alt="Image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section data-watch="navigator" data-watch-threshold="0.51" class="page__features features">
+                <div class="features__background"></div>
+                <div class="features__container">
+                    <div class="features__how" data-watch-threshold="0.7" data-watch-once data-watch>
+                        <div class="features__how-image">
+                            <img src="images/08.png" alt="image">
+                        </div>
+                        <div class="features__how-content">
+                            <h2 class="features__how-title">
+                                How this will be the Billion dollar SOL meme
+                            </h2>
+                            <div class="features__how-items">
+                                <div class="features__how-item">
+                                    <span>1</span>
+                                    <span>listing on pumpfun
+                                    </span>
+                                </div>
+                                <div class="features__how-item">
+                                    <span>2</span>
+                                    <span>
+                                        paying for a lot of marketing </span>
+                                </div>
+                                <div class="features__how-item">
+                                    <span>3</span>
+                                    <span>
+                                        listing on coinrmarket and coingecko</span>
+                                </div>
+                                <div class="features__how-item">
+                                    <span>4</span>
+                                    <span>listing on OKX
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="features__container">
+                    <div data-watch-threshold="0.6" data-watch-once data-watch class="features__herader">
+                        <h2 class="features__title">ROADMAP</h2>
+                        <div class="features__text">
+                            $HYPEGUY is for the community, by the community. It’s all about good vibes, memes, and
+                            having a laugh while riding the market waves. We’re planning some epic events, , just a fun
+                            coin
+                            with a bit of meme spirit.
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section data-watch="navigator" data-watch-threshold="0.85" class="page__tokenomics tokenomics">
+                <div class="tokenomics__container">
+                    <div data-watch-threshold="0.6" data-watch-once data-watch class="tokenomics__header">
+                        <h2 class="tokenomics__title">
+                            $HYPEGUY <br> Tokeno- <br> mics
+                        </h2>
+                        <div class="tokenomics__number">
+                            <div class="tokenomics__number-body">
+                                <div class="tokenomics__number-text">
+                                    Ax5ARi...TokoUvapump
+                                </div>
+                                <button type="button" class="tokenomics__number-button copy-ca-btn">
+                                    <img src="fonts/copy.svg" alt="Icon">
+                                </button>
+                            </div>
+                            <div class="tokenomics__number-bottom-text">
+                                Contract Address
+                            </div>
+                        </div>
+                    </div>
+                    <div data-watch-threshold="0.6" data-watch-once data-watch class="tokenomics__items">
+                        <div class="tokenomics__item item-tokenomics">
+                            <div class="item-tokenomics__title">SUPPLY</div>
+                            <div class="item-tokenomics__text">1BI</div>
+                        </div>
+                        <div class="tokenomics__item item-tokenomics">
+                            <div class="item-tokenomics__title">$HYPEGUY</div>
+                            <div class="item-tokenomics__text">Symbol</div>
+                        </div>
+                        <div class="tokenomics__item item-tokenomics">
+                            <div class="item-tokenomics__title">0/0</div>
+                            <div class="item-tokenomics__text">Tax</div>
+                        </div>
+                        <div class="tokenomics__item item-tokenomics">
+                            <div class="item-tokenomics__title">Burned Forever</div>
+                            <div class="item-tokenomics__text">Liquidity Pool</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section data-watch="navigator" data-watch-threshold="1" class="page__follow follow">
+                <div class="follow__container">
+                    <div data-watch-threshold="0.5" data-watch-once data-watch class="follow__body">
+                        <div class="follow__body-info">
+                            <h2 class="follow__body-title">
+                                Follow $HYPEGUY on social media
+                            </h2>
+                            <div class="follow__body-actions">
+                                <a target="_blank" href="https://t.me/hypeguyportal"
+                                    class="follow__body-button button button-black"><img src="fonts/telegram.svg"
+                                        alt="Telegram Icon"><span>Telegram</span></a>
+                                <a target="_blank" href="https://x.com/Hypeguyonsol_"
+                                    class="follow__body-button button button-black"><img src="fonts/x_1.svg"
+                                        alt="Twitter Icon"><span>Twitter/X</span></a>
+                            </div>
+                        </div>
+                        <div class="follow__body-image">
+                            <img src="images/01_1.png" alt="Image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__body">
+                    <div class="footer__top">
+                        <a href="index.html" class="footer__logo"><img src="images/logo.png" alt="Logo Image"></a>
+                        <div class="footer__social">
+                            <a target="_blank" href="#" class="footer__social-item button">
+                                <img src="fonts/okx.svg" alt="Icon">
+                            </a>
+                            <a target="_blank" href="https://t.me/hypeguyportal" class="footer__social-item button">
+                                <img src="fonts/tel.svg" alt="Icon">
+                            </a>
+                            <a target="_blank" href="https://x.com/Hypeguyonsol_" class="footer__social-item button">
+                                <img src="fonts/x.svg" alt="Icon">
+                            </a>
+                            <a target="_blank"
+                                href="https://dexscreener.com/solana/3lgjaj9pqwrzq7hsmpemjtymdqbprbupe51frp3kmsk6"
+                                class="footer__social-item button">
+                                <img src="fonts/dex.svg" alt="Icon">
+                            </a>
+                            <a target="_blank"
+                                href="https://www.dextools.io/app/en/solana/pair-explorer/3LGJAJ9PqWrZQ7hSmPemJTyMDQBPRBUpE51FRP3kmsK6?t=1732155475865"
+                                class="footer__social-item button">
+                                <img src="fonts/dex2.svg" alt="Icon">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>
